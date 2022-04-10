@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "next-fish"
+    "name": "nextfish"
   },
   "api": {
     "projectId": "42ynkluk",
@@ -20,10 +20,8 @@
       ]
     }
   },
-  "parts": [
-    {
-      "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema"
-    }
-  ]
+  "parts": [{
+    "name": "part:@sanity/base/schema",
+    "path": "./schemas/schema"
+  }]
 }
