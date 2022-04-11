@@ -47,12 +47,12 @@ export default function Home({fish}) {
       <div>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
           {fish?.length > 0 && fish.map((fish) => (
-          <li key={fish._id} className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9]">
-              <div className="h-52 bg-[#4BB6EF] relative rounded-lg shadow-lg">
-              <Image src={urlFor(fish.mainImage).url()} layout="fill" className="p-2 rounded-lg shadow object-contain relative" />
+          <li key={fish._id} className="rounded-lg shadow-lg mx-4 mt-2 bg-[#4bb6ef62]">
+              <div className="h-48 bg-[#4BB6EF] relative rounded-lg shadow-lg">
+              <Image src={urlFor(fish.mainImage).url()} layout="fill" objectFit="contain" className="p-2 rounded-lg shadow relative" />
               </div>
-              <div className="px-4 mt-2">
-                <h3 className="text-lg font-semibold text-gray-800">{fish.name}</h3>
+              <div className="p-4 h-48">
+                <h3 className="text-xl font-semibold text-gray-800">{fish.name}</h3>
                 <p className="text-gray-500 italic text-sm pb-2">{fish.scientificName}</p>
                 <div className="flex">
                     <img className="pb-2" src="/ruler.png" />
