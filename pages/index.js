@@ -47,7 +47,7 @@ export default function Home({ fish }) {
     <div>
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
         {fish?.length > 0 && fish.map((fish) => (
-          <li key={fish._id} className="rounded-lg shadow-lg mx-4 mt-2 bg-[#4bb6ef62]">
+          <li key={fish._id} className="rounded-lg shadow-lg mx-4 mt-2">
             <div className="h-48 bg-[#4BB6EF] relative rounded-lg shadow-lg">
               <Link href={`/fish/${fish.slug.current}`}>
                 <a>
@@ -55,7 +55,7 @@ export default function Home({ fish }) {
                 </a>
               </Link>
             </div>
-            <div className="p-4 h-48">
+            <div className="p-4 h-48 bg-[#edf6f9] rounded">
               <h3 className="text-xl font-semibold text-gray-800">{fish.name}</h3>
               <p className="text-gray-500 italic text-sm pb-2">{fish.scientificName}</p>
               <div className="flex">
