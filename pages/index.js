@@ -24,26 +24,6 @@ const fishQuery = `*[_type == "fish"]{
 
 export default function Home({ fish }) {
   return (
-    // <div classNameName = "flex space-x-2 justify-center" >
-    // <button type = "button" classNameName = "inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">{fish[0].name}</button>
-    // <div className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9]">
-    //         <div className="">
-    //             <img className="p-2 rounded-lg bg-[#4BB6EF] shadow" src="/smallmouthbass2.png" alt="" />
-    //         </div>
-    //         <div className="px-4 mt-2">
-    //             <h3 className="text-lg font-semibold text-gray-800">Smallmouth Bass</h3>
-    //             <p className="text-gray-500 italic text-sm pb-2">Micropterus dolomieu</p>
-    //             <div className="flex">
-    //                 <img className="pb-2" src="/ruler.png" />
-    //                 <p className="self-center pl-2">to 24 in.</p>
-    //             </div>
-    //             <div className="flex">
-    //                 <img className="pb-2" src="/scale.png" />
-    //                 <p className="self-center pl-2">to 12 lbs.</p>
-    //             </div>
-    //         </div>
-    //     </div> 
-
     <div>
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
         {fish?.length > 0 && fish.map((fish) => (

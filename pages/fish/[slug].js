@@ -16,24 +16,9 @@ const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
     description,
 }`
 
-
-
-
 export default function OneFish({ data }) {
     const { fish } = data;
     return (
-        // <article>
-        //     <h1>{fish.name}</h1>
-        //     <main>
-        //         <img />
-        //         <div>
-        //             <ul>
-        //                 <li></li>
-        //             </ul>
-        //             <h3>Here</h3>
-        //         </div>
-        //     </main>
-        // </article>
         <div className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9] h-screen">
             <div className="">
                 <img className="p-2 rounded-lg bg-[#4BB6EF] shadow" src={urlFor(fish.mainImage).url()} alt="" />
