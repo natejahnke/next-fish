@@ -25,6 +25,47 @@ const fishQuery = `*[_type == "fish"]{
 export default function Home({ fish }) {
   return (
     <div>
+      <div className="grid lg:grid-cols-2">
+        <div className="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:px-12 lg:py-24 lg:max-w-full">
+          <div className="xl:max-w-xl">
+            <div className="flex"><img className="h-10 self-center" src="/hook.svg" alt="Workcation" />
+            <h1 className="text-2xl font-headline tracking-tight font-semibold text-gray-900  sm:text-4xl lg:text-3xl xl:text-4xl">Fish of Minnesota</h1></div>
+            <img
+              className="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-88 sm:w-full sm:object-cover object-center lg:hidden"
+              src="/natejahnke.jpg"
+              alt="Woman workcationing on the beach"
+            />
+            <h1 className="mt-6 text-2xl font-headline tracking-tight font-semibold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl">
+              A Guide to Game Fishes
+              <br className="hidden lg:inline" /> <span className="text-brand"></span>
+            </h1>
+            
+            <ul role="list" class="ml-2 mt-2 sm:mt-8 sm:text-xl marker:text-gray-900 list-disc pl-5 space-y-3 text-gray-900">
+            <li>Size & Habitat</li>
+            <li>Distinguishing Features</li>
+            <li>Easy Identification</li>
+            </ul>
+            <div className="mt-4 space-x-1 sm:mt-6">
+              <a
+                className="inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                href="#"
+              >
+                I'm Feeling Fishy
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="hidden max-w-xl lg:block">
+          <div className="">
+          <img
+            className="m-3 object-cover rounded-lg shadow-lg"
+            src="/natejahnke.jpg"
+            alt="Woman workcationing on the beach"
+          />
+          </div>
+        </div>
+      </div>
+    <div className="bg-gray-200">
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
         {fish?.length > 0 && fish.map((fish) => (
           <li key={fish._id} className="rounded-lg shadow-lg mx-4 mt-2">
@@ -50,6 +91,7 @@ export default function Home({ fish }) {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 }

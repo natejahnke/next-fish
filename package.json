@@ -13,6 +13,7 @@
     "@sanity/client": "^3.3.0",
     "@sanity/components": "^2.14.0",
     "@sanity/image-url": "^1.0.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "next": "12.1.4",
     "next-sanity": "^0.5.1",
     "react": "^17.0.2",
