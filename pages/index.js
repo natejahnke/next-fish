@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import React, { useEffect, useState } from 'react';
 
 // import {usePreviewSubscription, } from '../lib/sanity'
 // import {PortableText} from '@portabletext/react'
@@ -23,6 +24,15 @@ const fishQuery = `*[_type == "fish"]{
 }`;
 
 export default function Home({ fish }) {
+
+    const [species, setSpecies] = useState([""]);
+
+    useEffect(() => {}, [species]);
+  
+    console.log(`${species[0]} ${species[1]}`)
+
+    const fishSpecies = [...new Set(fish.map((Val) => Val.scientificName))];
+
   return (
     <div>
       <div className="grid lg:grid-cols-2">
@@ -66,8 +76,38 @@ export default function Home({ fish }) {
         </div>
       </div>
     <div className="bg-gray-200">
+          <div className="flex justify-center">
+              <a
+                className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                onClick={() => setSpecies("Lepomis")}
+                href="#"
+              >
+                Panfish
+              </a>
+              <a
+                className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                onClick={() => setSpecies(["Micropterus"])}
+                href="#"
+              >
+                Bass & Walleye
+              </a>
+              <a
+                className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                onClick={() => setSpecies(["Lepomis"])}
+                href="#"
+              >
+                Pike & Musky
+              </a>
+              <a
+                className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                onClick={() => setSpecies(["Lepomis"])}
+                href="#"
+              >
+                Catfish
+              </a>
+              </div>
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
-        {fish?.length > 0 && fish.map((fish) => (
+        {fish.filter(fishes => fishes.scientificName.includes(species)).map(fish => (
           <li key={fish._id} className="rounded-lg shadow-lg mx-4 mt-2">
             <div className="h-48 bg-[#4BB6EF] relative rounded-lg shadow-lg">
               <Link href={`/fish/${fish.slug.current}`}>
