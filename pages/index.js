@@ -68,11 +68,11 @@ export default function Home({ fish }) {
     <div className="bg-gray-200">
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
         {fish?.length > 0 && fish.map((fish) => (
-          <li key={fish._id} className="rounded-lg shadow-lg mx-4 mt-2">
+          <li key={fish._id} className="rounded-lg transform transition shadow hover:shadow-xl mx-4 mt-2">
             <div className="h-48 bg-[#4BB6EF] relative rounded-lg shadow-lg">
               <Link href={`/fish/${fish.slug.current}`}>
                 <a>
-                  <Image src={urlFor(fish.mainImage).url()} layout="fill" objectFit="contain" className="p-2 rounded-lg shadow relative" />
+                  <Image src={urlFor(fish.mainImage).url()} layout="fill" objectFit="contain" className="p-2 rounded-lg shadow relative hover:scale-110 duration-500 transform transition z-50" />
                 </a>
               </Link>
             </div>

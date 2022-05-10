@@ -1307,6 +1307,11 @@
   dependencies:
     "function-bind" "^1.1.1"
 
+"hover.css@^2.3.2":
+  "integrity" "sha1-8HGT2cdAnU45UTTTsiFbmetV4NM="
+  "resolved" "https://registry.npmjs.org/hover.css/-/hover.css-2.3.2.tgz"
+  "version" "2.3.2"
+
 "ignore@^5.2.0":
   "integrity" "sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ=="
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-5.2.0.tgz"
