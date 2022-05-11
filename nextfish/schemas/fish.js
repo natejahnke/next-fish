@@ -70,5 +70,13 @@ export default {
                 list: ["Endangered", "Threatened", "na"],
             },
         },
+        {
+            name: "category",
+            title: "Category",
+            type: "string",
+            options: {
+                list: ["pan", "bass", "cat", "pike", "trout"],
+            },
+        }
     ]
 }

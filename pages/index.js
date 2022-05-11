@@ -21,7 +21,23 @@ const fishQuery = `*[_type == "fish"]{
   status,
   length,
   weight,
+  category,
 }`;
+
+// const speciesQuery = `*[category == "pan]{
+//   _id,
+//   name,
+//   slug,
+//   scientificName,
+//   description,
+//   habitat,
+//   bait,
+//   mainImage,
+//   status,
+//   length,
+//   weight,
+//   category,
+// }`;
 
 export default function Home({ fish }) {
 
@@ -29,9 +45,21 @@ export default function Home({ fish }) {
 
     useEffect(() => {}, [species]);
   
-    console.log(`${species[0]} ${species[1]}`)
+    // console.log(`${species[0]} ${species[1]}`)
+    console.log(species);
 
-    const fishSpecies = [...new Set(fish.map((Val) => Val.scientificName))];
+    // console.log(speciesSelect);
+
+    // const speciesList = fish.filter(f => {
+    //   return f.scientificName === "Lepomis";
+    // });
+
+    // console.log(fish[0].scientificName);
+    // console.log(speciesList)
+
+    const setSpeic = fish.filter(speci => speci.category == species);
+    console.log(setSpeic);
+ 
 
   return (
     <div>
@@ -77,42 +105,49 @@ export default function Home({ fish }) {
       </div>
     <div className="bg-gray-200">
           <div className="flex justify-center">
+          <a
+                className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                onClick={() => setSpecies("")}
+                href="#"
+              >
+                All
+              </a>
               <a
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies("Lepomis")}
+                onClick={() => setSpecies("pan")}
                 href="#"
               >
                 Panfish
               </a>
               <a
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies(["Micropterus"])}
+                onClick={() => setSpecies("bass")}
                 href="#"
               >
                 Bass & Walleye
               </a>
               <a
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies(["Lepomis"])}
+                onClick={() => setSpecies("pike")}
                 href="#"
               >
                 Pike & Musky
               </a>
               <a
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies(["Lepomis"])}
+                onClick={() => setSpecies("cat")}
                 href="#"
               >
                 Catfish
               </a>
               </div>
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
-        {fish.filter(fishes => fishes.scientificName.includes(species)).map(fish => (
+        {fish.filter(fishes => fishes.name && fishes.category == species).map(fish => (
           <li key={fish._id} className="rounded-lg shadow-lg mx-4 mt-2">
             <div className="h-48 bg-[#4BB6EF] relative rounded-lg shadow-lg">
               <Link href={`/fish/${fish.slug.current}`}>
                 <a>
-                  <Image src={urlFor(fish.mainImage).url()} layout="fill" objectFit="contain" className="p-2 rounded-lg shadow relative" />
+                  <Image src={urlFor(fish.mainImage).url()} layout="fill" objectFit="contain" className="p-2 rounded-lg shadow relative  hover:scale-110 duration-500 transform transition" />
                 </a>
               </Link>
             </div>
@@ -138,5 +173,6 @@ export default function Home({ fish }) {
 
 export async function getStaticProps() {
   const fish = await sanityClient.fetch(fishQuery);
-  return { props: { fish } };
+  // const speciesSelect = await sanityClient.fetch(speciesQuery)
+  return { props: { fish} };
 }
