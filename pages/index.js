@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from 'react';
-import Record from "./record/record";
 
 // import {usePreviewSubscription, } from '../lib/sanity'
 // import {PortableText} from '@portabletext/react'
@@ -118,6 +117,7 @@ export default function Home({ fish }) {
                 className="m-6 inline-block p-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("")}
                 href="#"
+                scroll={false}
               >
                 All
               </a>
@@ -125,6 +125,7 @@ export default function Home({ fish }) {
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pan")}
                 href="#"
+                scroll={false}
               >
                 Panfish
               </a>
@@ -132,6 +133,7 @@ export default function Home({ fish }) {
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("bass")}
                 href="#"
+                scroll={false}
               >
                 Bass & Walleye
               </a>
@@ -139,6 +141,7 @@ export default function Home({ fish }) {
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pike")}
                 href="#"
+                scroll={false}
               >
                 Pike & Musky
               </a>
@@ -146,6 +149,7 @@ export default function Home({ fish }) {
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("cat")}
                 href="#"
+                scroll={false}
               >
                 Catfish
               </a>
@@ -176,7 +180,6 @@ export default function Home({ fish }) {
         ))}
       </ul>
     </div>
-    <Record />
     </div>
   );
 }
