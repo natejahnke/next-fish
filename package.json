@@ -18,6 +18,7 @@
     "next-sanity": "^0.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-tailwind-table": "^1.1.1",
     "yarn": "^1.22.18"
   },
   "devDependencies": {
