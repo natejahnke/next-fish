@@ -78,7 +78,7 @@ export default function Record({ record }) {
   
     return (
         <div className='mx-4 mt-2'>
-            <Table columns={columns} rows={record} table_header="Test Table" row_render= {rowcheck} /> 
+            <Table columns={columns} rows={record} table_header="MN State Record Fish" row_render= {rowcheck} /> 
         </div>
       );
 };

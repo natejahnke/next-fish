@@ -114,7 +114,7 @@ export default function Home({ fish }) {
     <div className="bg-gray-200">
           <div className="justify-center">
           <a
-                className="m-6 inline-block p-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="m-4 inline-block p-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("")}
                 href="#"
                 scroll={false}
@@ -162,11 +162,11 @@ export default function Home({ fish }) {
               </a>
               </Link>
               </div>
-      <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
         {fish.filter(fishes => fishes.name && fishes.category == species).map(fish => (
           <Link href={`/fish/${fish.slug.current}`}>
                    <a>
-          <li key={fish._id} className="rounded-lg shadow-lg hover:shadow-[#4BB6EF] mx-4 mt-2">
+          <li key={fish._id} className="rounded-lg shadow-lg hover:shadow-[#4BB6EF]">
             <div className="h-48 bg-[#4BB6EF] relative rounded-lg shadow-lg">         
                   <Image src={urlFor(fish.mainImage).url()} layout="fill" objectFit="contain" className="p-2 rounded-lg shadow relative  hover:scale-110 duration-500 transform transition" />             
             </div>
