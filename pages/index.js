@@ -24,30 +24,33 @@ const fishQuery = `*[_type == "fish"]{
   category,
 }`;
 
-// const speciesQuery = `*[category == "pan]{
-//   _id,
-//   name,
-//   slug,
-//   scientificName,
-//   description,
-//   habitat,
-//   bait,
-//   mainImage,
-//   status,
-//   length,
-//   weight,
-//   category,
-// }`;
+const speciesQuery = `*[category == $speci]{
+  _id,
+  name,
+  slug,
+  scientificName,
+  description,
+  habitat,
+  bait,
+  mainImage,
+  status,
+  length,
+  weight,
+  category,
+}`;
 
-export default function Home({ fish }) {
+export default function Home({ data }) {
+
+    const { fishData, speciesData } = data;
+    console.log(speciesData);
 
     const [species, setSpecies] = useState([""]);
 
     useEffect(() => {}, [species]);
   
     // console.log(`${species[0]} ${species[1]}`)
-    console.log(species);
-    console.log(fish);
+    // console.log(species);
+    // console.log(fish);
     // console.log(speciesSelect);
 
     // const speciesList = fish.filter(f => {
@@ -57,7 +60,7 @@ export default function Home({ fish }) {
     // console.log(fish[0].scientificName);
     // console.log(speciesList)
 
-    const setSpeic = fish.filter(speci => speci.category == species);
+    const setSpeic = fishData.filter(speci => speci.category == species);
     console.log(setSpeic);
  
 
@@ -115,7 +118,7 @@ export default function Home({ fish }) {
           <div className="justify-center">
           <a
                 className="m-4 inline-block p-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies("")}
+                onClick={() => setSpecies(true)}
                 href="#"
                 scroll={false}
               >
@@ -163,7 +166,7 @@ export default function Home({ fish }) {
               </Link>
               </div>
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
-        {fish.filter(fishes => fishes.name && fishes.category == species).map(fish => (
+        {fishData.filter(fishes => fishes.name && fishes.category == species).map(fish => (
           <Link href={`/fish/${fish.slug.current}`}>
                    <a>
           <li key={fish._id} className="rounded-lg shadow-lg hover:shadow-[#4BB6EF]">
@@ -193,7 +196,9 @@ export default function Home({ fish }) {
 }
 
 export async function getStaticProps() {
-  const fish = await sanityClient.fetch(fishQuery);
-  // const speciesSelect = await sanityClient.fetch(speciesQuery)
-  return { props: { fish} };
+  const fishData = await sanityClient.fetch(fishQuery);
+  const speciesData = await sanityClient.fetch(speciesQuery, { speci: "pan" })
+
+  const data = { fishData, speciesData };
+  return { props: { data} };
 }
