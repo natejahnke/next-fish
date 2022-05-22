@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from 'react';
+import FishCard from "../comps/FishCard";
 
 // import {usePreviewSubscription, } from '../lib/sanity'
 // import {PortableText} from '@portabletext/react'
@@ -41,12 +42,17 @@ const speciesQuery = `*[category == $speci]{
 
 export default function Home({ data }) {
 
-    const { fishData, speciesData } = data;
-    console.log(speciesData);
+    const { fishData } = data;
+    // console.log(speciesData);
 
     const [species, setSpecies] = useState([""]);
 
     useEffect(() => {}, [species]);
+
+    // const filterCategory = fishData.filter(fishes => fishes.name && fishes.category == species);
+    // const filterAll = fishData.filter(fishes => fishes.name);
+    // console.log(filterCategory);
+    // console.log(filterAll);
   
     // console.log(`${species[0]} ${species[1]}`)
     // console.log(species);
@@ -60,8 +66,8 @@ export default function Home({ data }) {
     // console.log(fish[0].scientificName);
     // console.log(speciesList)
 
-    const setSpeic = fishData.filter(speci => speci.category == species);
-    console.log(setSpeic);
+    // const setSpeic = fishData.filter(speci => speci.category == species);
+    // console.log(setSpeic);
  
 
   return (
@@ -76,12 +82,19 @@ export default function Home({ data }) {
               src="/natejahnke.jpg"
               alt="Woman workcationing on the beach"
             />
+            {/* <Image
+              className="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-88 sm:w-full sm:object-cover object-center lg:hidden"
+              src="/natejahnke.jpg"
+              alt="Woman workcationing on the beach"
+              layout="fill"
+              objectFit="contain"
+            /> */}
             <h1 className="mt-6 text-2xl font-headline tracking-tight font-semibold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl">
               A Guide to Game Fishes
               <br className="hidden lg:inline" /> <span className="text-brand"></span>
             </h1>
             
-            <ul role="list" class="ml-2 mt-2 sm:mt-8 sm:text-xl marker:text-gray-900 list-disc pl-5 space-y-3 text-gray-900">
+            <ul role="list" className="ml-2 mt-2 sm:mt-8 sm:text-xl marker:text-gray-900 list-disc pl-5 space-y-3 text-gray-900">
             <li>Size & Habitat</li>
             <li>Distinguishing Features</li>
             <li>Easy Identification</li>
@@ -105,20 +118,25 @@ export default function Home({ data }) {
           </div>
         </div>
         <div className="hidden max-w-xl lg:block">
-          <div className="">
-          <img
+        <img
             className="m-3 object-cover rounded-lg shadow-lg"
             src="/natejahnke.jpg"
             alt="Woman workcationing on the beach"
           />
-          </div>
+          {/* <Image
+            className="m-3 object-cover rounded-lg shadow-lg"
+            src="/natejahnke.jpg"
+            alt="Woman workcationing on the beach"
+            layout="fill"
+            objectFit="contain"
+          /> */}
         </div>
       </div>
     <div className="bg-gray-200">
           <div className="justify-center">
           <a
                 className="m-4 inline-block p-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies(true)}
+                onClick={() => setSpecies(false)}
                 href="#"
                 scroll={false}
               >
@@ -166,28 +184,17 @@ export default function Home({ data }) {
               </Link>
               </div>
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
-        {fishData.filter(fishes => fishes.name && fishes.category == species).map(fish => (
-          <Link href={`/fish/${fish.slug.current}`}>
-                   <a>
-          <li key={fish._id} className="rounded-lg shadow-lg hover:shadow-[#4BB6EF]">
-            <div className="h-48 bg-[#4BB6EF] relative rounded-lg shadow-lg">         
-                  <Image src={urlFor(fish.mainImage).url()} layout="fill" objectFit="contain" className="p-2 rounded-lg shadow relative  hover:scale-110 duration-500 transform transition" />             
-            </div>
-            <div className="p-4 h-48 bg-[#edf6f9] rounded">
-              <h3 className="text-xl font-semibold text-gray-800">{fish.name}</h3>
-              <p className="text-gray-500 italic text-sm pb-2">{fish.scientificName}</p>
-              <div className="flex">
-                <img className="pb-2" src="/ruler.png" />
-                <p className="self-center pl-2">to {fish.length} in.</p>
-              </div>
-              <div className="flex">
-                <img className="pb-2" src="/scale.png" />
-                <p className="self-center pl-2">to {fish.weight} lbs.</p>
-              </div>
-            </div>
-          </li>
-          </a>
-          </Link>
+        {fishData.map((fish) => (
+          <FishCard 
+          key={fish._id}
+          slug={fish.slug.current}
+          alt={fish.name}
+          name={fish.name}
+          scientificName={fish.scientificName}
+          length={fish.length}
+          weight={fish.weight}
+          mainImage={urlFor(fish.mainImage).url()}
+          />
         ))}
       </ul>
     </div>
@@ -197,8 +204,6 @@ export default function Home({ data }) {
 
 export async function getStaticProps() {
   const fishData = await sanityClient.fetch(fishQuery);
-  const speciesData = await sanityClient.fetch(speciesQuery, { speci: "pan" })
-
-  const data = { fishData, speciesData };
+  const data = { fishData };
   return { props: { data} };
 }
