@@ -14,6 +14,7 @@ const FishCard = (props) => {
             <Image
               src={props.mainImage}
               alt={props.alt}
+              placeholder="blur" with animated shimmer blurDataURL
               layout="fill"
               objectFit="contain"
               className="p-2 rounded-lg relative shadow hover:scale-110 duration-500 transform transition"

@@ -43,11 +43,13 @@ const speciesQuery = `*[category == $speci]{
 export default function Home({ data }) {
 
     const { fishData } = data;
-    // console.log(speciesData);
+    console.log(fishData.category);
 
-    const [species, setSpecies] = useState([""]);
+    const [species, setSpecies] = useState(false);
 
-    useEffect(() => {}, [species]);
+    useEffect(() => {
+      
+    }, [species]);
 
     // const filterCategory = fishData.filter(fishes => fishes.name && fishes.category == species);
     // const filterAll = fishData.filter(fishes => fishes.name);
@@ -134,6 +136,7 @@ export default function Home({ data }) {
       </div>
     <div className="bg-gray-200">
           <div className="justify-center">
+          <Link href={"#"} scroll={false}>
           <a
                 className="m-4 inline-block p-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies(false)}
@@ -142,6 +145,7 @@ export default function Home({ data }) {
               >
                 All
               </a>
+              </Link>
               <Link href={"#"} scroll={false}>
               <a
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
@@ -184,18 +188,32 @@ export default function Home({ data }) {
               </Link>
               </div>
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
-        {fishData.map((fish) => (
-          <FishCard 
-          key={fish._id}
-          slug={fish.slug.current}
-          alt={fish.name}
-          name={fish.name}
-          scientificName={fish.scientificName}
-          length={fish.length}
-          weight={fish.weight}
-          mainImage={urlFor(fish.mainImage).url()}
-          />
-        ))}
+          {species ? (
+            fishData.filter(fishes => fishes.name && fishes.category == species)
+            .map(fish =>            
+            <FishCard 
+            key={fish._id}
+            slug={fish.slug.current}
+            alt={fish.name}
+            name={fish.name}
+            scientificName={fish.scientificName}
+            length={fish.length}
+            weight={fish.weight}
+            mainImage={urlFor(fish.mainImage).url()}
+            />
+            )) : (
+            fishData.map(fish =>
+            <FishCard 
+              key={fish._id}
+              slug={fish.slug.current}
+              alt={fish.name}
+              name={fish.name}
+              scientificName={fish.scientificName}
+              length={fish.length}
+              weight={fish.weight}
+              mainImage={urlFor(fish.mainImage).url()}
+            />
+            ))}
       </ul>
     </div>
     </div>
