@@ -39,7 +39,10 @@ const FishCard = (props) => {
             <div>
               <h3 className="font-semibold">MN State Record</h3>
             </div>
-            <p>{props.recordPounds}{props.recordOunces}</p>
+            {props.recordPounds == "undefinedlbs" ?
+              <p></p> :
+              <p>{props.recordPounds} {props.recordOunces} {props.recordLength} {props.recordGirth} {props.recordLake} {props.recordCounty} {props.recordDate}</p>
+            }
           </div>
         </li>
       </a>

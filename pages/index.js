@@ -213,8 +213,14 @@ export default function Home({ data }) {
               length={fish.length}
               weight={fish.weight}
               mainImage={urlFor(fish.mainImage).url()}
+              recordName={fish.record.name}
               recordPounds={fish.record?.pounds+"lbs"}
               recordOunces={fish.record?.ounces+"oz"}
+              recordLength={fish.record?.ounces+"oz"}
+              recordGirth={fish.record?.ounces+"oz"}
+              recordLake={fish.record?.ounces+"oz"}
+              recordCounty={fish.record?.ounces+"oz"}
+              recordDate={fish.record?.ounces+"oz"}
             />
             ))}
       </ul>
