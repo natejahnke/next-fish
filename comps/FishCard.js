@@ -4,7 +4,7 @@ import Image from "next/image";
 const FishCard = (props) => {
   return (
       <div>
-    <Link href={`/fish/${props.slug}`}>
+    <Link href={`/fish/${props.slug}`} >
       <a>
         <li
           key={props._id}
@@ -14,6 +14,7 @@ const FishCard = (props) => {
             <Image
               src={props.mainImage}
               alt={props.alt}
+              // priority={true}
               loading="lazy"
               // placeholder="blur" with animated shimmer blurDataURL
               layout="fill"

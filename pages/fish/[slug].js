@@ -21,9 +21,9 @@ export default function OneFish({ data }) {
     const { fish } = data;
     console.log(fish.record.name);
     return (
-        <div className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9] h-screen">
+        <div className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9]">
             <div className="">
-                <img className="p-2 rounded-lg bg-[#4BB6EF] shadow" src={urlFor(fish.mainImage).url()} alt="" />
+                <img className="p-2 rounded-lg bg-[#4BB6EF] shadow w-[600px]" src={urlFor(fish.mainImage).url()} alt="" />
             </div>
             <div className="px-4 mt-2">
                 <h3 className="text-lg font-semibold text-gray-800">{fish.name}</h3>
@@ -36,7 +36,7 @@ export default function OneFish({ data }) {
                     <img className="pb-2" src="/scale.png" />
                     <p className="self-center pl-2">to {fish.weight} lbs.</p>
                 </div>
-                <p>{fish.description}.</p>
+                <p>{fish.description}</p>
                 <p>{fish.record.name}</p>
             </div>
         </div>

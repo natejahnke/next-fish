@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="">
       <Link href="/">
       <a>
-        <img src="/hook.svg" alt="hook logo" class="h-10" layout='fill' />
+        <img src="/hook.svg" alt="hook logo" className="h-10" layout='fill' />
         </a>
       </Link>
       </div>

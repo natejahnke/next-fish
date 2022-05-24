@@ -141,7 +141,6 @@ export default function Home({ data }) {
                 className="m-4 inline-block p-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies(false)}
                 href="#"
-                scroll={false}
               >
                 All
               </a>
@@ -151,7 +150,6 @@ export default function Home({ data }) {
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pan")}
                 href="#"
-                scroll={false}
               >
                 Panfish
               </a>
@@ -161,7 +159,6 @@ export default function Home({ data }) {
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("bass")}
                 href="#"
-                scroll={false}
               >
                 Bass & Walleye
               </a>
@@ -171,7 +168,6 @@ export default function Home({ data }) {
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pike")}
                 href="#"
-                scroll={false}
               >
                 Pike & Musky
               </a>
@@ -181,7 +177,6 @@ export default function Home({ data }) {
                 className="m-6 inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("cat")}
                 href="#"
-                scroll={false}
               >
                 Catfish
               </a>
@@ -200,7 +195,13 @@ export default function Home({ data }) {
             length={fish.length}
             weight={fish.weight}
             mainImage={urlFor(fish.mainImage).url()}
-            recordName={fish.record?.name}
+            recordPounds={fish.record?.pounds+"lbs"}
+            recordOunces={fish.record?.ounces+"oz"}
+            recordLength={fish.record?.length+"in"}
+            recordGirth={fish.record?.girth+"in"}
+            recordLake={fish.record?.place}
+            recordCounty={fish.record?.county}
+            recordDate={fish.record?.date}
             />
             )) : (
             fishData.map(fish =>
@@ -213,14 +214,13 @@ export default function Home({ data }) {
               length={fish.length}
               weight={fish.weight}
               mainImage={urlFor(fish.mainImage).url()}
-              recordName={fish.record.name}
               recordPounds={fish.record?.pounds+"lbs"}
               recordOunces={fish.record?.ounces+"oz"}
-              recordLength={fish.record?.ounces+"oz"}
-              recordGirth={fish.record?.ounces+"oz"}
-              recordLake={fish.record?.ounces+"oz"}
-              recordCounty={fish.record?.ounces+"oz"}
-              recordDate={fish.record?.ounces+"oz"}
+              recordLength={fish.record?.length+"in"}
+              recordGirth={fish.record?.girth+"in"}
+              recordLake={fish.record?.place}
+              recordCounty={fish.record?.county}
+              recordDate={fish.record?.date}
             />
             ))}
       </ul>
