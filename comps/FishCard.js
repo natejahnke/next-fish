@@ -14,7 +14,8 @@ const FishCard = (props) => {
             <Image
               src={props.mainImage}
               alt={props.alt}
-              placeholder="blur" with animated shimmer blurDataURL
+              loading="lazy"
+              // placeholder="blur" with animated shimmer blurDataURL
               layout="fill"
               objectFit="contain"
               className="p-2 rounded-lg relative shadow hover:scale-110 duration-500 transform transition"
@@ -26,6 +27,7 @@ const FishCard = (props) => {
               {props.scientificName}
             </p>
             <div className="flex">
+            <div className="flex">
               <img className="pb-2" src="/ruler.png" />
               <p className="self-center pl-2">to {props.length} in.</p>
             </div>
@@ -33,6 +35,11 @@ const FishCard = (props) => {
               <img className="pb-2" src="/scale.png" />
               <p className="self-center pl-2">to {props.weight} lbs.</p>
             </div>
+            </div>
+            <div>
+              <h3 className="font-semibold">MN State Record</h3>
+            </div>
+            <p>{props.recordPounds}{props.recordOunces}</p>
           </div>
         </li>
       </a>

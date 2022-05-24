@@ -24,6 +24,12 @@ export default {
             to: { type: "fisherman" },
         },
         {
+            name: "record",
+            title: "Record",
+            type: "reference",
+            to: {type: "record"}
+        },
+        {
             name: "mainImage",
             title: "Fish Main Image",
             type: "image",

@@ -23,6 +23,7 @@ const fishQuery = `*[_type == "fish"]{
   length,
   weight,
   category,
+  record->,
 }`;
 
 const speciesQuery = `*[category == $speci]{
@@ -43,8 +44,7 @@ const speciesQuery = `*[category == $speci]{
 export default function Home({ data }) {
 
     const { fishData } = data;
-    console.log(fishData.category);
-
+    console.log(fishData[16].record);
     const [species, setSpecies] = useState(false);
 
     useEffect(() => {
@@ -200,6 +200,7 @@ export default function Home({ data }) {
             length={fish.length}
             weight={fish.weight}
             mainImage={urlFor(fish.mainImage).url()}
+            recordName={fish.record?.name}
             />
             )) : (
             fishData.map(fish =>
@@ -212,6 +213,8 @@ export default function Home({ data }) {
               length={fish.length}
               weight={fish.weight}
               mainImage={urlFor(fish.mainImage).url()}
+              recordPounds={fish.record?.pounds+"lbs"}
+              recordOunces={fish.record?.ounces+"oz"}
             />
             ))}
       </ul>
