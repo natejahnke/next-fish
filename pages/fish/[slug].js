@@ -19,7 +19,7 @@ const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
 
 export default function OneFish({ data }) {
     const { fish } = data;
-    console.log(fish.record.name);
+    // console.log(fish.record.name);
     return (
         <div className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9]">
             <div className="">
@@ -37,7 +37,7 @@ export default function OneFish({ data }) {
                     <p className="self-center pl-2">to {fish.weight} lbs.</p>
                 </div>
                 <p>{fish.description}</p>
-                <p>{fish.record.name}</p>
+                <p>{fish.record?.name}</p>
             </div>
         </div>
     )

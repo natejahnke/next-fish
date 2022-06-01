@@ -1230,6 +1230,11 @@
   "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.2.5.tgz"
   "version" "3.2.5"
 
+"focus-options-polyfill@1.5.1":
+  "integrity" "sha512-7yH20IePROHJLLbJvqqtsG420jE6DuukccapiB/WagtUpnc98r9NzHbX5rnjCDgdZqLgcqlzGjn+8l0Zb8Zf9w=="
+  "resolved" "https://registry.npmjs.org/focus-options-polyfill/-/focus-options-polyfill-1.5.1.tgz"
+  "version" "1.5.1"
+
 "follow-redirects@^1.2.4":
   "integrity" "sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.9.tgz"
@@ -2441,7 +2446,7 @@
     "minimist" "^1.2.0"
     "strip-json-comments" "~2.0.1"
 
-"react-dom@^17.0.2", "react-dom@^17.0.2 || ^18.0.0-0":
+"react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^17.0.2", "react-dom@^17.0.2 || ^18.0.0-0":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -2455,12 +2460,20 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
+"react-medium-image-zoom@^4.4.3":
+  "integrity" "sha512-I928Z6mEMRUup4CPa+XtASiSuFzdVb1ecztXpF7xAJddXv4XZSE4n5gleZNYCn5wEU1LQY5LiN4aNW4KgrOVIA=="
+  "resolved" "https://registry.npmjs.org/react-medium-image-zoom/-/react-medium-image-zoom-4.4.3.tgz"
+  "version" "4.4.3"
+  dependencies:
+    "focus-options-polyfill" "1.5.1"
+    "tslib" "^2.4.0"
+
 "react-tailwind-table@^1.1.1":
   "integrity" "sha512-X+3MFk/6DBZ/TSlrOPAkKiwHTMaEOBqVKTVytzAW4F0aT8bEvokiiEjkQ1zPOYUETjW6LrRb2Hb9FczqWjJYnw=="
   "resolved" "https://registry.npmjs.org/react-tailwind-table/-/react-tailwind-table-1.1.1.tgz"
   "version" "1.1.1"
 
-"react@^17 || ^18", "react@^17.0.2", "react@^17.0.2 || ^18.0.0-0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.3.0", "react@17.0.2":
+"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17 || ^18", "react@^17.0.2", "react@^17.0.2 || ^18.0.0-0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.3.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -2897,6 +2910,11 @@
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
+
+"tslib@^2.4.0":
+  "integrity" "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
+  "version" "2.4.0"
 
 "tsutils@^3.21.0":
   "integrity" "sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA=="

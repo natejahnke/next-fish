@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import { sanityClient, urlFor } from "../../lib/sanity";
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
+
 
 
 const recordQuery = `*[_type == "record"]{
@@ -59,43 +62,109 @@ function column() {
 }
 
 export default function Record({ record }) {
-  const [refCallback, slider, sliderNode] = useKeenSlider(
-    {
-      slideChanged() {
-        console.log('slide changed')
+  const [sliderRef] = useKeenSlider({
+    breakpoints: {
+      '(min-width: 768px)': {
+        slides: {
+          perView: 3,
+          spacing: 10,
+        },
       },
     },
-    [
-      // add plugins here
-    ]
-  )
+    // slides: {
+    //   perView: 3,
+    //   spacing: 10,
+    // },
+  })
+
   console.log(record);
   const [columns, setColumns] = useState(column());
-//   const [rows, setRows] = useState(fakePlayers());
-
 
   const rowcheck = (row,column, display_value) => {
-
     if (column.field === "created_at") {
       return <button className="border p-2">See button</button>
     }
-
     if (column.field === "name") {
       return <b>{display_value}</b>
     }
-
     return display_value
   }
-
   
     return (
-      <div>
-          <div ref={refCallback} className="keen-slider h-20">
-          <div className="keen-slider__slide">1</div>
-          <div className="keen-slider__slide">2</div>
-          <div className="keen-slider__slide">3</div>
+      <div className="lg:mx-32">
+          <div ref={sliderRef} className="keen-slider overflow-hidden">
+          <div className="keen-slider__slide flex bg-slate-200 rounded-lg shadow-xl">
+            <Zoom>
+            <img src="../flatheadcatfishrecord.jpg" alt="" className="rounded-lg shadow-xl h-full w-44 object-cover object-center" />
+            </Zoom>
+            <div className="ml-4">
+            <h3 className="text-2xl mb-2">Flathead Catfish</h3>
+            <p><span className="font-semibold">Length:</span> 52 inches<sup>1</sup>/<sub>2</sub></p>
+            <p><span className="font-semibold">Girth:</span> 32 inches</p>
+            <p><span className="font-semibold">Caught:</span> August 2, 2017</p>
+            <p><span className="font-semibold">Place:</span> St. Croix River</p>
+            <p><span className="font-semibold">County:</span> Washington</p>
+            <p><span className="font-semibold">Angler:</span> Mark Mosby, St. Anthony</p>
+            </div>
           </div>
-        <div className='mx-32 mt-2'>
+          <div className="keen-slider__slide flex-col bg-slate-200 rounded-lg shadow-xl">
+            <Zoom>
+            <img src="../lakesturgeonrecord.jpg" alt="" className="rounded-lg shadow-xl h-52 w-full object-cover object-center" />
+            </Zoom>
+            <div className="ml-4">
+            <h3 className="text-2xl mb-2">Lake Sturgeon</h3>
+            <p><span className="font-semibold">Length:</span> 78 inches<sup>1</sup>/<sub>2</sub></p>
+            <p><span className="font-semibold">Girth:</span> 29<sup>1</sup><sub>2</sub> inches</p>
+            <p><span className="font-semibold">Caught:</span> February 9, 2019</p>
+            <p><span className="font-semibold">Place:</span> St. Croix River</p>
+            <p><span className="font-semibold">County:</span> Washington</p>
+            <p><span className="font-semibold">Angler:</span> Darren Troseth, Jordan</p>
+            </div>
+          </div>
+          <div className="keen-slider__slide flex-col bg-slate-200 rounded-lg shadow-xl">
+            <Zoom wrapStyle={{width: '100%'}}>
+            <img src="../pikerecord.jpg" alt="" className="rounded-lg shadow-xl h-52 w-full object-cover object-center" />
+            </Zoom>
+            <div className="ml-4">
+            <h3 className="text-2xl mb-2">Northern Pike</h3>
+            <p><span className="font-semibold">Length:</span> 46 inches<sup>1</sup>/<sub>4</sub></p>
+            <p><span className="font-semibold">Girth:</span> Not provided</p>
+            <p><span className="font-semibold">Caught:</span> June 19, 2021</p>
+            <p><span className="font-semibold">Place:</span> Basswood Lake</p>
+            <p><span className="font-semibold">County:</span> Lake</p>
+            <p><span className="font-semibold">Angler:</span> Brecken Kobylecky, Geneva, Ill.</p>
+            </div>
+          </div>
+          <div className="keen-slider__slide flex-col bg-slate-200 rounded-lg shadow-xl">
+          <Zoom wrapStyle={{width: '100%'}}>
+            <img src="../muskyrecord1.jpg" alt="" className="rounded-lg shadow-xl h-52 w-full object-cover object-top" />
+            </Zoom>
+            <div className="ml-4">
+            <h3 className="text-2xl mb-2">Muskellunge - Tie</h3>
+            <p><span className="font-semibold">Length:</span> 57 inches<sup>1</sup>/<sub>4</sub></p>
+            <p><span className="font-semibold">Girth:</span> Not provided</p>
+            <p><span className="font-semibold">Caught:</span> July 23, 2021</p>
+            <p><span className="font-semibold">Place:</span> Lake Vermilion</p>
+            <p><span className="font-semibold">County:</span> Cook</p>
+            <p><span className="font-semibold">Angler:</span> Todd Kirby, Hudson, Wis.</p>
+            </div>
+          </div>
+          <div className="keen-slider__slide flex-col bg-slate-200 rounded-lg shadow-xl">
+            <Zoom wrapStyle={{width: '100%'}}>
+            <img src="../muskyrecord2.jpg" alt="" className="rounded-lg shadow-xl h-52 w-full object-cover object-center" />
+            </Zoom>
+            <div className="ml-4">
+            <h3 className="text-2xl mb-2">Muskellunge - Tie</h3>
+            <p><span className="font-semibold">Length:</span> 57 inches<sup>1</sup>/<sub>4</sub></p>
+            <p><span className="font-semibold">Girth:</span> 25<sup>1</sup><sub>2</sub> inches</p>
+            <p><span className="font-semibold">Caught:</span> August 6, 2019</p>
+            <p><span className="font-semibold">Place:</span> Lake Vermilion</p>
+            <p><span className="font-semibold">County:</span> St. Louis</p>
+            <p><span className="font-semibold">Angler:</span> Corey Kitzmann, Davenport, Iowa</p>
+            </div>
+          </div>
+          </div>
+        <div className='mt-2'>
             <Table columns={columns} rows={record} per_page={5} table_header="MN State Record Fish" row_render= {rowcheck} /> 
         </div>
       </div>
