@@ -4,6 +4,7 @@ import {
     usePreviewSubscription,
     PortableText,
 } from "../../lib/sanity";
+import { useRouter } from "next/router";
 
 const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
     _id,
@@ -19,7 +20,10 @@ const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
 
 export default function OneFish({ data }) {
     const { fish } = data;
-    // console.log(fish.record.name);
+    const router = useRouter()
+
+
+    if (router.isFallback) 
     return (
         <div className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9]">
             <div className="">
