@@ -4,7 +4,8 @@ import {
     usePreviewSubscription,
     PortableText,
 } from "../../lib/sanity";
-import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+import imageUrlBuilder from "@sanity/image-url";
 
 const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
     _id,
@@ -19,16 +20,35 @@ const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
 }`
 
 export default function OneFish({ data }) {
-    const { fish } = data ?? {};
-    const router = useRouter()
+    
+    // const router = useRouter()
+    if (!data) return <div>Loading...</div>;
+    const { fish } = data;
+    const image = fish.mainImage;
+    // console.log(image);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // const { data: fish } = usePreviewSubscription(fishQuery, {
+    //   params: { slug: data.fish?.slug.current },
+    //   initialData: data,
+    //   enabled: preview,
+    // });
 
+    const [imageUrl, setImageUrl] = useState("");
+
+    useEffect(() => {
+        const imgBuilder = imageUrlBuilder({
+            projectId: "42ynkluk",
+            dataset: "production",
+        });
+
+        setImageUrl(imgBuilder.image(image));
+    }, [image]);
 
     // if (!fish) return <div>Loading...</div>;
-
     return (
         <div className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9]">
             <div className="">
-                <img className="p-2 rounded-lg bg-[#4BB6EF] shadow w-[600px]" src={urlFor(fish.mainImage).url()} alt="" />
+                {imageUrl && <img className="p-2 rounded-lg bg-[#4BB6EF] shadow w-[600px]" src={imageUrl} alt="" />}
             </div>
             <div className="px-4 mt-2">
                 <h3 className="text-lg font-semibold text-gray-800">{fish.name}</h3>
