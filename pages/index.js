@@ -90,7 +90,7 @@ export default function Home({ data }) {
             <h1 className="text-2xl font-headline tracking-tight font-semibold text-gray-900  sm:text-4xl lg:text-3xl xl:text-4xl">Fish of Minnesota</h1></div>
             <img
               className="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-88 sm:w-full sm:object-cover object-center lg:hidden"
-              src="/natejahnke.jpg"
+              src="/natejahnke.JPG"
               alt="Woman workcationing on the beach"
             />
             {/* <Image
