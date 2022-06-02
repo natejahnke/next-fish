@@ -19,7 +19,7 @@ const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
 }`
 
 export default function OneFish({ data }) {
-    const { fish } = data;
+    const { fish } = data ?? {};
     const router = useRouter()
 
 
