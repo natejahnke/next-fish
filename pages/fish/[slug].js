@@ -23,10 +23,8 @@ export default function OneFish({ data }) {
     const router = useRouter()
 
 
-    if (router.isFallback) {
-        return <div>Loading...</div>;
-    }
-    
+    // if (!fish) return <div>Loading...</div>;
+
     return (
         <div className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9]">
             <div className="">
@@ -61,7 +59,7 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: true,
+        fallback: false,
     };
 }
 
