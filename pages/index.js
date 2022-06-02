@@ -131,7 +131,7 @@ export default function Home({ data }) {
         <div className="hidden max-w-xl lg:block">
         <img
             className="m-3 object-cover rounded-lg shadow-lg"
-            src="/natejahnke.jpg"
+            src="/natejahnke.JPG"
             alt="Woman workcationing on the beach"
           />
           {/* <Image
