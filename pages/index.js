@@ -110,19 +110,20 @@ export default function Home({ data }) {
             <li>Distinguishing Features</li>
             <li>Easy Identification</li>
             </ul>
-            <div className="mt-4 space-x-1 sm:mt-6">
+            <div className="mt-4 sm:mt-6 flex-col md:flex-row flex">
+            <Link href="https://files.dnr.state.mn.us/rlp/regulations/fishing/fishing_regs.pdf#view=fit&pagemode=bookmarks" passHref={true}>
               <a
-                className="inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="md:mr-2 mb-2 text-center inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 href="#"
               >
-                I'm Feeling Fishy
+              Fishing Regulations
               </a>
+              </Link>
               <Link href={`/record/record`}>
               <a
-                className="inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="mb-2 text-center inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 href="#"
-              >
-                Record Fish
+              >Minnesota Records
               </a>
               </Link>
             </div>
