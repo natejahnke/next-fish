@@ -20,21 +20,9 @@ const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
 }`
 
 export default function OneFish({ data }) {
-    
-    // const router = useRouter()
-    if (!data) return <div>Loading...</div>;
-    const { fish } = data;
+    const { fish } = data ?? {};
     const image = fish.mainImage;
-    // console.log(image);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    // const { data: fish } = usePreviewSubscription(fishQuery, {
-    //   params: { slug: data.fish?.slug.current },
-    //   initialData: data,
-    //   enabled: preview,
-    // });
-
     const [imageUrl, setImageUrl] = useState("");
-
     useEffect(() => {
         const imgBuilder = imageUrlBuilder({
             projectId: "42ynkluk",
@@ -43,6 +31,20 @@ export default function OneFish({ data }) {
 
         setImageUrl(imgBuilder.image(image));
     }, [image]);
+    // const router = useRouter()
+    if (!data) return <div>Loading...</div>;
+    
+    // console.log(image);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // const { data: fish } = usePreviewSubscription(fishQuery, {
+    //   params: { slug: data.fish?.slug.current },
+    //   initialData: data,
+    //   enabled: preview,
+    // });
+
+    
+
+    
 
     // if (!fish) return <div>Loading...</div>;
     return (
