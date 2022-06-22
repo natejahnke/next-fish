@@ -201,6 +201,7 @@ export default function Home({ data }) {
             length={fish.length}
             weight={fish.weight}
             mainImage={urlFor(fish.mainImage).url()}
+            recordName={fish.record?.name}
             recordPounds={fish.record?.pounds+"lbs"}
             recordOunces={fish.record?.ounces+"oz"}
             recordLength={fish.record?.length+"in"}
@@ -220,6 +221,7 @@ export default function Home({ data }) {
               length={fish.length}
               weight={fish.weight}
               mainImage={urlFor(fish.mainImage).url()}
+              recordName={fish.record?.name}
               recordPounds={fish.record?.pounds+"lbs"}
               recordOunces={fish.record?.ounces+"oz"}
               recordLength={fish.record?.length+"in"}

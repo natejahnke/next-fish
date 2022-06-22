@@ -88,7 +88,7 @@ export default function Record({ record }) {
   }
   
     return (
-      <div className="lg:mx-32">
+      <div className="lg:mx-32 mt-3">
           <div ref={sliderRef} className="keen-slider overflow-hidden">
           <div className="keen-slider__slide flex bg-slate-200 rounded-lg shadow-xl">
             <Zoom>

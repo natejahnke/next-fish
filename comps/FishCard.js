@@ -37,12 +37,14 @@ const FishCard = (props) => {
               <p className="self-center pl-2">to {props.weight} lbs.</p>
             </div>
             </div>
+            {!props.recordName ?
+            <p></p> : 
+            <div>
             <div>
               <h3 className="font-semibold">MN State Record</h3>
             </div>
-            {props.recordPounds == "undefinedlbs" ?
-              <p></p> :
               <p>{props.recordPounds} {props.recordOunces} {props.recordLength} {props.recordGirth} {props.recordLake} {props.recordCounty} {props.recordDate}</p>
+            </div>
             }
           </div>
         </li>
