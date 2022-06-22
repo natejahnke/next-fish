@@ -120,7 +120,7 @@ export default function Home({ data }) {
               Fishing Regulations
               </a>
               </Link>
-              <Link href={`/record/record`}>
+              <Link href={`/record`}>
               <a
                 className="mb-2 text-center inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 href="#"

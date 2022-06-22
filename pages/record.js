@@ -1,13 +1,10 @@
-import Table from 'react-tailwind-table'
-import 'react-tailwind-table/dist/index.css' //use for a non tailwind project
-import React, { useState } from 'react';
+import Table from 'react-tailwind-table';
+import React, { useState, Component } from 'react';
 import { sanityClient, urlFor } from "../lib/sanity";
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
-
-
 
 const recordQuery = `*[_type == "record"]{
     _id,
@@ -165,7 +162,7 @@ export default function Record({ record }) {
           </div>
           </div>
         <div className='mt-2'>
-            <Table columns={columns} rows={record} per_page={5} table_header="MN State Record Fish" row_render= {rowcheck} /> 
+            <Table columns={columns} rows={record} per_page={5} table_header="MN State Record Fish" row_render={rowcheck} /> 
         </div>
       </div>
       );
