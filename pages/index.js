@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import FishCard from "../comps/FishCard";
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
+import profilePic from "../public/natejahnke.jpg";
 
 // import {usePreviewSubscription, } from '../lib/sanity'
 // import {PortableText} from '@portabletext/react'
@@ -90,7 +91,7 @@ export default function Home({ data }) {
             <h1 className="text-2xl font-headline tracking-tight font-semibold text-gray-900  sm:text-4xl lg:text-3xl xl:text-4xl">Fish of Minnesota</h1></div>
             <img
               className="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-88 sm:w-full sm:object-cover object-center lg:hidden"
-              src="/natejahnke.JPG"
+              src={profilePic.src}
               alt="Woman workcationing on the beach"
             />
             {/* <Image
@@ -132,7 +133,7 @@ export default function Home({ data }) {
         <div className="hidden max-w-xl lg:block">
         <img
             className="m-3 object-cover rounded-lg shadow-lg"
-            src="/natejahnke.JPG"
+            src={profilePic.src}
             alt="Woman workcationing on the beach"
           />
           {/* <Image
@@ -145,53 +146,6 @@ export default function Home({ data }) {
         </div>
       </div>
     <div className="bg-gray-200">
-          {/* <div ref={sliderRef} className="ml-4 keen-slider">
-          <div className="keen-slider__slide"><Link href={"#"} scroll={false}>
-          <a
-                className="m-2 inline-block px-5 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies(false)}
-                href="#"
-              >
-                All
-              </a>
-              </Link></div>
-              <div className="keen-slider__slide"><Link href={"#"} scroll={false}>
-              <a
-                className="m-2 inline-block px-5 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies("pan")}
-                href="#"
-              >
-                Panfish
-              </a>
-              </Link></div>
-              <div className="keen-slider__slide"><Link href={"#"} scroll={false}>
-              <a
-                className="m-2 inline-block px-5 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies("bass")}
-                href="#"
-              >
-                Panfish
-              </a>
-              </Link></div>
-              <div className="keen-slider__slide"><Link href={"#"} scroll={false}>
-              <a
-                className="m-2 inline-block px-5 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies("pike")}
-                href="#"
-              >
-                Panfish
-              </a>
-              </Link></div>
-              <div className="keen-slider__slide"><Link href={"#"} scroll={false}>
-              <a
-                className="m-2 inline-block px-5 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
-                onClick={() => setSpecies("cat")}
-                href="#"
-              >
-                Catfish
-              </a>
-              </Link></div>
-              </div> */}
               <div className="flex justify-around"> 
                 <Link href={"#"} scroll={false}>
                 <a
