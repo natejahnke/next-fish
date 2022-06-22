@@ -1,7 +1,7 @@
 import Table from 'react-tailwind-table'
 import 'react-tailwind-table/dist/index.css' //use for a non tailwind project
 import React, { useState } from 'react';
-import { sanityClient, urlFor } from "../../lib/sanity";
+import { sanityClient, urlFor } from "../lib/sanity";
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import Zoom from 'react-medium-image-zoom';
