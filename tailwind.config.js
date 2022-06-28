@@ -13,6 +13,9 @@ module.exports = {
         }
       }
     },
+    fontFamily: {
+      source_sans: ["Source Sans Pro", "sans-serif"]
+    },
   },
   plugins: [require('@tailwindcss/aspect-ratio')],
 }

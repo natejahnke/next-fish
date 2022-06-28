@@ -83,12 +83,12 @@ export default function Home({ data }) {
  
 
   return (
-    <div>
+    <div  className="font-source_sans">
       <div className="grid lg:grid-cols-2">
         <div className="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:px-12 lg:py-24 lg:max-w-full">
           <div className="xl:max-w-xl">
             <div className="flex"><img className="h-10 self-center" src="/hook.svg" alt="Workcation" />
-            <h1 className="text-2xl font-headline tracking-tight font-semibold text-gray-900  sm:text-4xl lg:text-3xl xl:text-4xl">Fish of Minnesota</h1></div>
+            <h1 className="text-2xl font-headline tracking-tight font-semibold sm:text-4xl lg:text-3xl xl:text-4xl">Fish of Minnesota</h1></div>
             <img
               className="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-88 sm:w-full sm:object-cover object-center lg:hidden"
               src={profilePic.src}
@@ -101,12 +101,12 @@ export default function Home({ data }) {
               layout="fill"
               objectFit="contain"
             /> */}
-            <h1 className="mt-6 text-2xl font-headline tracking-tight font-semibold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl">
+            <h1 className="mt-6 text-2xl font-headline tracking-tight font-semibold sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl">
               A Guide to Game Fishes
               <br className="hidden lg:inline" /> <span className="text-brand"></span>
             </h1>
             
-            <ul role="list" className="ml-2 mt-2 sm:mt-8 sm:text-xl marker:text-gray-900 list-disc pl-5 space-y-3 text-gray-900">
+            <ul role="list" className="ml-2 mt-2 sm:mt-8 sm:text-xl list-disc pl-5 space-y-3 text-[#b6cce2]">
             <li>Size & Habitat</li>
             <li>Distinguishing Features</li>
             <li>Easy Identification</li>
@@ -114,15 +114,17 @@ export default function Home({ data }) {
             <div className="mt-4 sm:mt-6 flex-col md:flex-row flex">
             <Link href="https://files.dnr.state.mn.us/rlp/regulations/fishing/fishing_regs.pdf#view=fit&pagemode=bookmarks" passHref={true}>
               <a
-                className="md:mr-2 mb-2 text-center inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="md:mr-2 mb-2 text-center inline-block px-5 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 href="#"
+                rel="noopener noreferrer"
+                target="_blank"
               >
               Fishing Regulations
               </a>
               </Link>
               <Link href={`/record`}>
               <a
-                className="mb-2 text-center inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="mb-2 text-center inline-block px-5 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 href="#"
               >Minnesota Records
               </a>
@@ -132,7 +134,7 @@ export default function Home({ data }) {
         </div>
         <div className="hidden max-w-xl lg:block">
         <img
-            className="m-3 object-cover rounded-lg shadow-lg"
+            className="mt-3 mr-3 object-cover rounded-lg shadow-lg"
             src={profilePic.src}
             alt="Woman workcationing on the beach"
           />
@@ -145,50 +147,39 @@ export default function Home({ data }) {
           /> */}
         </div>
       </div>
-    <div className="bg-gray-200">
-              <div className="flex justify-around"> 
-                <Link href={"#"} scroll={false}>
-                <a
-                className="my-2 inline-block px-2 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+    <div>
+              <div className="flex lg:mx-16 mx-5 gap-10 justify-center"> 
+                <button
+                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies(false)}
-                href="#"
                 >All
-                </a>
-                </Link>
-                <Link href={"#"} scroll={false}>
-                <a
-                className="my-2 inline-block px-2 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                </button>
+                <button
+                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pan")}
                 href="#"
                 >Panfish
-                </a>
-                </Link>
-                <Link href={"#"} scroll={false}>
-                <a
-                className="my-2 inline-block px-2 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                </button>
+                <button
+                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("bass")}
                 href="#"
                 >Bass
-                </a>
-                </Link>
-                <Link href={"#"} scroll={false}>
-                <a
-                className="my-2 inline-block px-2 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                </button>
+                <button
+                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pike")}
                 href="#"
                 >Pike
-                </a>
-                </Link>
-                <Link href={"#"} scroll={false}>
-                <a
-                className="my-2 inline-block px-2 py-3 rounded-full transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                </button>
+                <button
+                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("cat")}
                 href="#"
                 >Catfish
-                </a>
-                </Link>
+                </button>
               </div>
-      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
+      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:mx-16 mx-5">
           {species ? (
             fishData.filter(fishes => fishes.name && fishes.category == species)
             .map(fish =>            

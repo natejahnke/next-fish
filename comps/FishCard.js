@@ -8,9 +8,9 @@ const FishCard = (props) => {
       <a>
         <li
           key={props._id}
-          className="relative rounded-lg shadow-lg hover:shadow-[#4BB6EF]"
+          className="relative shadow hover:shadow-lg border-gray-800 border rounded-lg"
         >
-          <div className="h-48 bg-[#4BB6EF] relative rounded-lg shadow-lg">
+          <div className="h-48 bg-[#4BB6EF] rounded-t-lg relative shadow-lg">
             <Image
               src={props.mainImage}
               alt={props.alt}
@@ -19,21 +19,21 @@ const FishCard = (props) => {
               // placeholder="blur" with animated shimmer blurDataURL
               layout="fill"
               objectFit="contain"
-              className="p-2 rounded-lg relative shadow hover:scale-110 duration-500 transform transition"
+              className="p-2 relative shadow hover:scale-110 duration-500 transform transition"
             />
           </div>
-          <div className="p-4 h-48 bg-[#edf6f9] rounded">
-            <h3 className="text-xl font-semibold text-gray-800">{props.name}</h3>
-            <p className="text-gray-500 italic text-sm pb-2">
+          <div className="p-4 h-48 bg-[#274059] hover:bg-[#2c4763] rounded-b-lg">
+            <h3 className="text-xl font-semibold">{props.name}</h3>
+            <p className="italic text-sm pb-2 text-[#63809c]">
               {props.scientificName}
             </p>
+            <div className="flex text-[#b6cce2]">
             <div className="flex">
-            <div className="flex">
-              <img className="pb-2" src="/ruler.png" />
+              <img className="pb-2 w-8" src="/tapewhite.svg" />
               <p className="self-center pl-2">to {props.length} in.</p>
             </div>
             <div className="flex">
-              <img className="pb-2" src="/scale.png" />
+              <img className="pb-2 w-8" src="/weightwhite.svg" />
               <p className="self-center pl-2">to {props.weight} lbs.</p>
             </div>
             </div>
