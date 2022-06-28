@@ -148,7 +148,7 @@ export default function Home({ data }) {
         </div>
       </div>
     <div>
-              <div className="flex lg:mx-16 mx-5 gap-10 justify-center"> 
+              <div className="flex lg:mx-16 mx-5 lg:gap-10 gap-2 justify-center"> 
                 <button
                 className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies(false)}
