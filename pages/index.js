@@ -85,15 +85,23 @@ export default function Home({ data }) {
   return (
     <div  className="font-source_sans">
       <div className="grid lg:grid-cols-2">
-        <div className="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:px-12 lg:py-24 lg:max-w-full">
+        <div className="px-8 py-12    lg:px-12 lg:py-24 lg:max-w-full">
           <div className="xl:max-w-xl">
             <div className="flex"><img className="h-10 self-center" src="/hook.svg" alt="Workcation" />
             <h1 className="text-2xl font-headline tracking-tight font-semibold sm:text-4xl lg:text-3xl xl:text-4xl">Fish of Minnesota</h1></div>
-            <img
+            {/* <img
               className="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-88 sm:w-full sm:object-cover object-center lg:hidden"
               src={profilePic.src}
               alt="Woman workcationing on the beach"
-            />
+            /> */}
+            <div className="flex">
+            <div className="relative w-1/2"><img src="/pikebanner.jpg" alt="Pike fish" loading="lazy" layout="fill"  className="object-cover object-center"/></div>
+            <div className="relative w-1/2"><img src="/bassbanner.jpg" alt="Pike fish" loading="lazy" layout="fill"  className="object-cover object-center"/></div>
+            </div>
+            <div className="flex">
+            <div className="relative w-1/2"><img src="/crappiebanner.jpg" alt="Pike fish" loading="lazy" layout="fill"  className="object-cover object-center"/></div>
+            <div className="relative w-1/2"><img src="/walleyebanner.jpg" alt="Pike fish" loading="lazy" layout="fill" objectFit="cover" className="object-cover object-center"/></div>
+            </div>
             {/* <Image
               className="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-88 sm:w-full sm:object-cover object-center lg:hidden"
               src="/natejahnke.jpg"
@@ -132,12 +140,16 @@ export default function Home({ data }) {
             </div>
           </div>
         </div>
-        <div className="hidden max-w-xl lg:block">
-        <img
+        <div className="hidden lg:grid grid-cols-2">
+        <div className="relative w-full h-full"><Image src="/pikebanner.jpg" alt="Pike fish" loading="lazy" layout="fill" objectFit="cover" className=""/></div>
+        <div className="relative w-full h-full"><Image src="/bassbanner.jpg" alt="Pike fish" loading="lazy" layout="fill" objectFit="cover" className=""/></div>
+        <div className="relative w-full h-full"><Image src="/crappiebanner.jpg" alt="Pike fish" loading="lazy" layout="fill" objectFit="cover" className=""/></div>
+        <div className="relative w-full h-full"><Image src="/walleyebanner.jpg" alt="Pike fish" loading="lazy" layout="fill" objectFit="cover" className=""/></div>
+        {/* <img
             className="mt-3 mr-3 object-cover rounded-lg shadow-lg"
             src={profilePic.src}
             alt="Woman workcationing on the beach"
-          />
+          /> */}
           {/* <Image
             className="m-3 object-cover rounded-lg shadow-lg"
             src="/natejahnke.jpg"
