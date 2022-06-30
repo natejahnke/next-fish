@@ -85,7 +85,7 @@ export default function Home({ data }) {
   return (
     <div  className="font-source_sans">
       <div className="grid lg:grid-cols-2">
-        <div className="px-8 py-12    lg:px-12 lg:py-24 lg:max-w-full">
+        <div className="justify-self-center px-8 py-12 lg:px-12 lg:py-24 lg:max-w-full">
           <div className="xl:max-w-xl">
             <div className="flex"><img className="h-10 self-center" src="/hook.svg" alt="Workcation" />
             <h1 className="text-2xl font-headline tracking-tight font-semibold sm:text-4xl lg:text-3xl xl:text-4xl">Fish of Minnesota</h1></div>
@@ -94,11 +94,11 @@ export default function Home({ data }) {
               src={profilePic.src}
               alt="Woman workcationing on the beach"
             /> */}
-            <div className="flex">
+            <div className="flex lg:hidden">
             <div className="relative w-1/2"><img src="/pikebanner.jpg" alt="Pike fish" loading="lazy" layout="fill"  className="object-cover object-center"/></div>
             <div className="relative w-1/2"><img src="/bassbanner.jpg" alt="Pike fish" loading="lazy" layout="fill"  className="object-cover object-center"/></div>
             </div>
-            <div className="flex">
+            <div className="flex lg:hidden">
             <div className="relative w-1/2"><img src="/crappiebanner.jpg" alt="Pike fish" loading="lazy" layout="fill"  className="object-cover object-center"/></div>
             <div className="relative w-1/2"><img src="/walleyebanner.jpg" alt="Pike fish" loading="lazy" layout="fill" objectFit="cover" className="object-cover object-center"/></div>
             </div>
@@ -160,32 +160,32 @@ export default function Home({ data }) {
         </div>
       </div>
     <div>
-              <div className="flex lg:mx-16 mx-5 lg:gap-10 gap-2 justify-center"> 
+              <div className="flex lg:mx-16 mx-5 gap-2 justify-center"> 
                 <button
-                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies(false)}
                 >All
                 </button>
                 <button
-                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pan")}
                 href="#"
                 >Panfish
                 </button>
                 <button
-                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("bass")}
                 href="#"
                 >Bass
                 </button>
                 <button
-                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pike")}
                 href="#"
                 >Pike
                 </button>
                 <button
-                className="w-28 my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("cat")}
                 href="#"
                 >Catfish
