@@ -83,7 +83,7 @@ export default function Home({ data }) {
  
 
   return (
-    <div  className="font-source_sans">
+    <div  className="font-source_sans min-h-[calc(100vh-100px)]">
       <div className="grid lg:grid-cols-2">
         <div className="justify-self-center px-8 py-12 lg:px-12 lg:py-24 lg:max-w-full">
           <div className="xl:max-w-xl">
@@ -122,7 +122,7 @@ export default function Home({ data }) {
             <div className="mt-4 sm:mt-6 flex-col md:flex-row flex">
             <Link href="https://files.dnr.state.mn.us/rlp/regulations/fishing/fishing_regs.pdf#view=fit&pagemode=bookmarks" passHref={true}>
               <a
-                className="md:mr-2 mb-2 text-center inline-block px-5 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="shadow hover:shadow-lg border border-gray-800 md:mr-2 mb-2 text-center inline-block px-5 py-3 rounded transform transition bg-[#1f364d] hover:bg-[#274059] hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 href="#"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -132,7 +132,7 @@ export default function Home({ data }) {
               </Link>
               <Link href={`/record`}>
               <a
-                className="mb-2 text-center inline-block px-5 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="shadow hover:shadow-lg border border-gray-800 mb-2 text-center inline-block px-5 py-3 rounded transform transition bg-[#1f364d] hover:bg-[#274059] hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 href="#"
               >Minnesota Records
               </a>
@@ -160,32 +160,32 @@ export default function Home({ data }) {
         </div>
       </div>
     <div>
-              <div className="flex lg:mx-16 mx-5 gap-2 justify-center"> 
+              <div className="flex lg:mx-16 mx-5 gap-2 justify-center" id="fishfilter"> 
                 <button
-                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="shadow hover:shadow-lg border border-gray-800 w-full my-2 inline-block px-2 py-3 rounded transform transition bg-[#1f364d] hover:bg-[#274059] hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies(false)}
                 >All
                 </button>
                 <button
-                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="shadow hover:shadow-lg border border-gray-800 w-full my-2 inline-block px-2 py-3 rounded transform transition bg-[#1f364d] hover:bg-[#274059] hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pan")}
                 href="#"
                 >Panfish
                 </button>
                 <button
-                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="shadow hover:shadow-lg border border-gray-800 w-full my-2 inline-block px-2 py-3 rounded transform transition bg-[#1f364d] hover:bg-[#274059] hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("bass")}
                 href="#"
                 >Bass
                 </button>
                 <button
-                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="shadow hover:shadow-lg border border-gray-800 w-full my-2 inline-block px-2 py-3 rounded transform transition bg-[#1f364d] hover:bg-[#274059] hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("pike")}
                 href="#"
                 >Pike
                 </button>
                 <button
-                className="w-full my-2 inline-block px-2 py-3 rounded transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
+                className="shadow hover:shadow-lg border border-gray-800 w-full my-2 inline-block px-2 py-3 rounded transform transition bg-[#1f364d] hover:bg-[#274059] hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base"
                 onClick={() => setSpecies("cat")}
                 href="#"
                 >Catfish

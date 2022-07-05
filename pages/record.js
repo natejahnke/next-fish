@@ -90,7 +90,7 @@ export default function Record({ record }) {
     return (
       <div className="lg:mx-32 mt-3">
           <div ref={sliderRef} className="keen-slider overflow-hidden">
-          <div className="keen-slider__slide flex bg-slate-200 rounded-lg shadow-xl">
+          <div className="keen-slider__slide flex bg-[#274059] rounded-lg shadow-xl">
             <Zoom>
             <img src="../flatheadcatfishrecord.jpg" alt="" className="rounded-lg shadow-xl h-full w-44 object-cover object-center" />
             </Zoom>
@@ -104,7 +104,7 @@ export default function Record({ record }) {
             <p><span className="font-semibold">Angler:</span> Mark Mosby, St. Anthony</p>
             </div>
           </div>
-          <div className="keen-slider__slide flex-col bg-slate-200 rounded-lg shadow-xl">
+          <div className="keen-slider__slide flex-col bg-[#274059] rounded-lg shadow-xl">
             <Zoom>
             <img src="../lakesturgeonrecord.jpg" alt="" className="rounded-lg shadow-xl h-52 w-full object-cover object-center" />
             </Zoom>
@@ -118,7 +118,7 @@ export default function Record({ record }) {
             <p><span className="font-semibold">Angler:</span> Darren Troseth, Jordan</p>
             </div>
           </div>
-          <div className="keen-slider__slide flex-col bg-slate-200 rounded-lg shadow-xl">
+          <div className="keen-slider__slide flex-col bg-[#274059] rounded-lg shadow-xl">
             <Zoom wrapStyle={{width: '100%'}}>
             <img src="../pikerecord.jpg" alt="" className="rounded-lg shadow-xl h-52 w-full object-cover object-center" />
             </Zoom>
@@ -132,7 +132,7 @@ export default function Record({ record }) {
             <p><span className="font-semibold">Angler:</span> Brecken Kobylecky, Geneva, Ill.</p>
             </div>
           </div>
-          <div className="keen-slider__slide flex-col bg-slate-200 rounded-lg shadow-xl">
+          <div className="keen-slider__slide flex-col bg-[#274059] rounded-lg shadow-xl">
           <Zoom wrapStyle={{width: '100%'}}>
             <img src="../muskyrecord1.jpg" alt="" className="rounded-lg shadow-xl h-52 w-full object-cover object-top" />
             </Zoom>
@@ -146,7 +146,7 @@ export default function Record({ record }) {
             <p><span className="font-semibold">Angler:</span> Todd Kirby, Hudson, Wis.</p>
             </div>
           </div>
-          <div className="keen-slider__slide flex-col bg-slate-200 rounded-lg shadow-xl">
+          <div className="keen-slider__slide flex-col bg-[#274059] rounded-lg shadow-xl">
             <Zoom wrapStyle={{width: '100%'}}>
             <img src="../muskyrecord2.jpg" alt="" className="rounded-lg shadow-xl h-52 w-full object-cover object-center" />
             </Zoom>
