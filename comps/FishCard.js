@@ -32,7 +32,7 @@ const FishCard = (props) => {
               <img className="pb-2 w-8" src="/tapewhite.svg" />
               <p className="self-center pl-2">to {props.length} in.</p>
             </div>
-            <div className="flex">
+            <div className="ml-4 flex">
               <img className="pb-2 w-8" src="/weightwhite.svg" />
               <p className="self-center pl-2">to {props.weight} lbs.</p>
             </div>
@@ -43,7 +43,9 @@ const FishCard = (props) => {
             <div>
               <h3 className="font-semibold">MN State Record</h3>
             </div>
-              <p>{props.recordPounds} {props.recordOunces} {props.recordLength} {props.recordGirth} {props.recordLake} {props.recordCounty} {props.recordDate}</p>
+              <p><span className="italic text-sm pb-2 text-[#63809c]">Weight:</span> {props.recordPounds} {props.recordOunces}<span className="ml-4 italic text-sm pb-2 text-[#63809c]">Length:</span> {props.recordLength} <span className="ml-4 italic text-sm pb-2 text-[#63809c]">Girth:</span> {props.recordGirth} <span className="ml-4 italic text-sm pb-2 text-[#63809c]">Place:</span> {props.recordLake}
+              <br />
+              <span className="italic text-sm pb-2 text-[#63809c]">County: </span>{props.recordCounty} <span className="ml-4 italic text-sm pb-2 text-[#63809c]">Caught: </span>{props.recordDate}</p>
             </div>
             }
           </div>
