@@ -22,7 +22,7 @@ const FishCard = (props) => {
               className="p-2 relative shadow hover:scale-110 duration-500 transform transition"
             />
           </div>
-          <div className="p-4 h-48 bg-[#274059] hover:bg-[#2c4763] rounded-b-lg">
+          <div className="p-4 h-54 bg-[#274059] hover:bg-[#2c4763] rounded-b-lg">
             <h3 className="text-xl font-semibold">{props.name}</h3>
             <p className="italic text-sm pb-2 text-[#63809c]">
               {props.scientificName}

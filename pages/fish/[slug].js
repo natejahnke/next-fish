@@ -48,19 +48,19 @@ export default function OneFish({ data }) {
 
     // if (!fish) return <div>Loading...</div>;
     return (
-        <div className="rounded-lg shadow-lg mx-4 mt-2 bg-[#edf6f9]">
+        <div className="sm-m-2 rounded-lg shadow-lg mx-4 mt-2 bg-[#274059]">
             <div className="">
-                {imageUrl && <img className="p-2 rounded-lg bg-[#4BB6EF] shadow w-[600px]" src={imageUrl} alt="" />}
+                {imageUrl && <img className="p-2 rounded-lg bg-[#4BB6EF] shadow" src={imageUrl} alt="" />}
             </div>
             <div className="px-4 mt-2">
-                <h3 className="text-lg font-semibold text-gray-800">{fish.name}</h3>
-                <p className="text-gray-500 italic text-sm pb-2">{fish.scientificName}</p>
-                <div className="flex">
-                    <img className="pb-2" src="/ruler.png" />
+                <h3 className="text-lg font-semibold">{fish.name}</h3>
+                <p className="text-[#63809c] italic text-sm pb-2">{fish.scientificName}</p>
+                <div className="flex text-[#b6cce2]">
+                <img className="pb-2 w-8" src="/tapewhite.svg" />
                     <p className="self-center pl-2">to {fish.length} in.</p>
                 </div>
-                <div className="flex">
-                    <img className="pb-2" src="/scale.png" />
+                <div className="flex text-[#b6cce2]">
+                <img className="pb-2 w-8" src="/weightwhite.svg" />
                     <p className="self-center pl-2">to {fish.weight} lbs.</p>
                 </div>
                 <p>{fish.description}</p>
