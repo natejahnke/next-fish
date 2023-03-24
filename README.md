@@ -1,34 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+```
+# Next-Fish
+
+Next-Fish is a modern, responsive, and high-performance web application built using the latest web development technologies. This project showcases the integration of various popular libraries and tools to create a seamless user experience. The site demonstrates a visually appealing gallery of fish species, enriched with detailed information about each species. Users can easily navigate through the site, interact with images, and access relevant information about the showcased fish.
+
+![Screenshot of Next-Fish](./public/nextfishdemo.png)
+
+## Demo
+
+Check out the live demo here: [https://next-mn-fish.vercel.app/](https://next-mn-fish.vercel.app/)
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Sanity.io](https://www.sanity.io/)
+- [Portable Text](https://www.portabletext.org/)
+- [Font Awesome](https://fontawesome.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Keen Slider](https://keen-slider.io/)
+- [React Medium Image Zoom](https://github.com/rpearce/react-medium-image-zoom)
+- [hover.css](https://ianlunn.github.io/Hover/)
+- [Sharp](https://sharp.pixelplumbing.com/)
+
+## Project Repository
+
+You can find the project repository on GitHub: [https://github.com/natejahnke/next-fish](https://github.com/natejahnke/next-fish)
 
 ## Getting Started
 
-First, run the development server:
+To set up the project locally, follow these steps:
 
-```bash
-npm run dev
-# or
+1. Clone the repository:
+
+```
+git clone https://github.com/natejahnke/next-fish.git
+```
+
+2. Change to the project directory:
+
+```
+cd next-fish
+```
+
+3. Install dependencies using Yarn:
+
+```
+yarn install
+```
+
+4. Run the development server:
+
+```
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Building for Production
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To build the application for production, run:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+yarn build
+```
 
-## Learn More
+After building, you can run the production server:
 
-To learn more about Next.js, take a look at the following resources:
+```
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Feel free to submit pull requests, report bugs, or suggest new features via the [GitHub issues](https://github.com/natejahnke/next-fish/issues) page.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is open-source and available under the [MIT License](https://opensource.org/licenses/MIT).
+```
