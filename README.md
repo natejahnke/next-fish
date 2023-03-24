@@ -1,9 +1,8 @@
-```
 # Next-Fish
 
 Next-Fish is a modern, responsive, and high-performance web application built using the latest web development technologies. This project showcases the integration of various popular libraries and tools to create a seamless user experience. The site demonstrates a visually appealing gallery of fish species, enriched with detailed information about each species. Users can easily navigate through the site, interact with images, and access relevant information about the showcased fish.
 
-![Screenshot of Next-Fish](./public/nextfishdemo.png)
+![Screenshot of Next-Fish](/public/nextfishdemo.png)
 
 ## Demo
 
@@ -77,4 +76,3 @@ Feel free to submit pull requests, report bugs, or suggest new features via the 
 ## License
 
 This project is open-source and available under the [MIT License](https://opensource.org/licenses/MIT).
-```
