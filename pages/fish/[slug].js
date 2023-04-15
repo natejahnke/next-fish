@@ -18,6 +18,11 @@ const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
 export default function OneFish({ data }) {
   const router = useRouter();
   const { fish } = data ?? {};
+
+  if (!fish || router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   const image = fish.mainImage;
   const [imageUrl, setImageUrl] = useState("");
 
@@ -138,7 +143,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 }
 
