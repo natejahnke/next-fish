@@ -122,13 +122,19 @@ export default function OneFish({ data }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(
-    `*[_type == "fish" && defined(slug.current)]{
-        "params": {
-          "slug": slug.current
-        }
-      }`
-  );
+  let paths = [];
+
+  try {
+    paths = await sanityClient.fetch(
+      `*[_type == "fish" && defined(slug.current)]{
+          "params": {
+            "slug": slug.current
+          }
+        }`
+    );
+  } catch (error) {
+    console.error("Error fetching paths in getStaticPaths:", error);
+  }
 
   return {
     paths,
@@ -138,7 +144,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const fish = await sanityClient.fetch(fishQuery, { slug });
+  let fish;
+
+  try {
+    fish = await sanityClient.fetch(fishQuery, { slug });
+  } catch (error) {
+    console.error("Error fetching fish data in getStaticProps:", error);
+    return {
+      notFound: true,
+    };
+  }
+
   return { props: { data: { fish }, preview: true }, revalidate: 60 };
 }
 
