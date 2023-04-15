@@ -1,23 +1,26 @@
 import { sanityClient } from "../../lib/sanity";
 import { useState, useEffect } from "react";
 import imageUrlBuilder from "@sanity/image-url";
+import { useRouter } from "next/router";
 
 const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
-    _id,
-    name,
-    scientificName,
-    slug,
-    mainImage,
-    length,
-    weight,
-    description,
-    "record": record->
+  _id,
+  name,
+  scientificName,
+  slug,
+  mainImage,
+  length,
+  weight,
+  description,
+  "record": record->
 }`;
 
 export default function OneFish({ data }) {
+  const router = useRouter();
   const { fish } = data ?? {};
   const image = fish.mainImage;
   const [imageUrl, setImageUrl] = useState("");
+
   useEffect(() => {
     const imgBuilder = imageUrlBuilder({
       projectId: "42ynkluk",
@@ -26,34 +29,93 @@ export default function OneFish({ data }) {
 
     setImageUrl(imgBuilder.image(image));
   }, [image]);
-  if (!data) return <div>Loading...</div>;
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
+  const record = fish.record;
 
   return (
-    <div className="sm-m-2 rounded-lg shadow-lg mx-4 mt-2 bg-[#274059]">
-      <div className="">
+    <div className="bg-[#274059] p-4 sm:p-8 rounded-lg shadow-lg">
+      <div className="flex flex-col sm:flex-row items-center">
         {imageUrl && (
           <img
-            className="p-2 rounded-lg bg-[#4BB6EF] shadow"
+            className="bg-[#4BB6EF] rounded-lg shadow w-full sm:w-1/3 h-auto object-cover mb-4 sm:mb-0 sm:mr-6"
             src={imageUrl}
-            alt=""
+            alt={fish.name}
           />
         )}
-      </div>
-      <div className="px-4 mt-2">
-        <h3 className="text-lg font-semibold">{fish.name}</h3>
-        <p className="text-[#63809c] italic text-sm pb-2">
-          {fish.scientificName}
-        </p>
-        <div className="flex text-[#b6cce2]">
-          <img className="pb-2 w-8" src="/tapewhite.svg" />
-          <p className="self-center pl-2">to {fish.length} in.</p>
+        <div className="text-white space-y-4">
+          <h3 className="text-2xl font-semibold">{fish.name}</h3>
+          <p className="text-lg italic text-[#63809c]">{fish.scientificName}</p>
+          <div className="flex items-center text-[#b6cce2] space-x-2">
+            <img className="w-8" src="/tapewhite.svg" />
+            <p>Up to {fish.length} in.</p>
+          </div>
+          <div className="flex items-center text-[#b6cce2] space-x-2">
+            <img className="w-8" src="/weightwhite.svg" />
+            <p>Up to {fish.weight} lbs.</p>
+          </div>
+          <p className="text-white">{fish.description}</p>
+
+          {record && (
+            <div className="space-y-2">
+              <h3 className="font-semibold">MN State Record</h3>
+              <p>
+                {record.pounds && (
+                  <>
+                    <span className="italic text-sm text-[#63809c]">
+                      Weight:
+                    </span>{" "}
+                    {record.pounds} lbs {record.ounces} oz
+                  </>
+                )}
+                {record.length && (
+                  <>
+                    <span className="ml-4 italic text-sm text-[#63809c]">
+                      Length:
+                    </span>{" "}
+                    {record.length} in.
+                  </>
+                )}
+                {record.girth && (
+                  <>
+                    <span className="ml-4 italic text-sm text-[#63809c]">
+                      Girth:
+                    </span>{" "}
+                    {record.girth} in.
+                  </>
+                )}
+                {record.place && (
+                  <>
+                    <span className="ml-4 italic text-sm text-[#63809c]">
+                      Place:
+                    </span>{" "}
+                    {record.place}
+                  </>
+                )}
+                <br />
+                {record.county && (
+                  <>
+                    <span className="italic text-sm text-[#63809c]">
+                      County:
+                    </span>{" "}
+                    {record.county}
+                  </>
+                )}
+                {record.date && (
+                  <>
+                    <span className="ml-4 italic text-sm text-[#63809c]">
+                      Caught:
+                    </span>{" "}
+                    {new Date(record.date).toLocaleDateString()}
+                  </>
+                )}
+              </p>
+            </div>
+          )}
         </div>
-        <div className="flex text-[#b6cce2]">
-          <img className="pb-2 w-8" src="/weightwhite.svg" />
-          <p className="self-center pl-2">to {fish.weight} lbs.</p>
-        </div>
-        <p>{fish.description}</p>
-        <p>{fish.record?.name}</p>
       </div>
     </div>
   );
@@ -70,14 +132,14 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const fish = await sanityClient.fetch(fishQuery, { slug });
-  return { props: { data: { fish }, preview: true } };
+  return { props: { data: { fish }, preview: true }, revalidate: 60 };
 }
 
 // Path: ./pages/fish/[slug].js

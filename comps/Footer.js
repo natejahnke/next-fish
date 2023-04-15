@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="h-[100px]">
-      <div className="text-[#b6cce2]">
+    <footer className="bg-[#274059] text-[#b6cce2] p-4">
+      <div>
         Made by <FontAwesomeIcon icon={faGithub} inverse />{" "}
         <Link href="https://github.com/natejahnke">
           <a>Nate Jahnke</a>
@@ -20,3 +20,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// Path: comps\Footer.js

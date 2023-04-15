@@ -1,15 +1,14 @@
-import Footer from "./Footer"
+import Footer from "./Footer";
 import Navbar from "./Navbar";
-
 
 const Layout = ({ children }) => {
   return (
-    <div className="content">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      { children }
+      <div className="flex-grow">{children}</div>
       <Footer />
     </div>
   );
-}
- 
+};
+
 export default Layout;
