@@ -18,12 +18,8 @@ const fishQuery = `*[_type == "fish" && slug.current == $slug][0]{
 export default function OneFish({ data }) {
   const router = useRouter();
   const { fish } = data ?? {};
-
-  if (!fish || router.isFallback) {
-    return <div>Loading...</div>;
-  }
-
   const image = fish.mainImage;
+
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -35,7 +31,7 @@ export default function OneFish({ data }) {
     setImageUrl(imgBuilder.image(image));
   }, [image]);
 
-  if (router.isFallback) {
+  if (!fish || router.isFallback) {
     return <div>Loading...</div>;
   }
 
